@@ -10,13 +10,12 @@ namespace rr_bot;
 public class ReactionRolesSlashCommands : ApplicationCommandModule
 {
     /// <summary>
-    ///		Add Rero Command.
+    ///		Add Reaction Role Command.
     /// </summary>
     /// <param name="ctx"></param>
     /// <param name="emoji"></param>
     /// <param name="role"></param>
     /// <returns></returns>
-
     [SlashCommand("add", "Adds a reaction role to your previous message in this channel")]
     public async Task AddReactionRoleCommand(InteractionContext ctx,
         [Option("emoji", "Reaction / Emoji for this reaction role")]
@@ -58,17 +57,12 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             return;
         }
 
-        //
         // Attempt to add reaction to said message
-
         try
         {
             DiscordEmoji? targetEmoji = null;
 
-            if (DiscordEmoji.IsValidUnicode(emoji))
-            {
-                targetEmoji = DiscordEmoji.FromUnicode(emoji);
-            }
+            if (DiscordEmoji.IsValidUnicode(emoji)) targetEmoji = DiscordEmoji.FromUnicode(emoji);
             else
             {
                 var emojiRegex = new Regex(@":[0-9]*>");
@@ -91,7 +85,6 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             return;
         }
 
-        //
         // Save in database if success
 
         await using (var connection = new SqliteConnection("Data Source=database.db"))
@@ -105,7 +98,6 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             command.ExecuteNonQuery();
         }
 
-        //
         // Send success message
 
         var responseBuilder = new DiscordInteractionResponseBuilder();
@@ -116,7 +108,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
     }
 
     /// <summary>
-    ///		Remove rero command
+    ///		Remove Reaction Role command
     /// </summary>
     /// <param name="ctx"></param>
     /// <param name="message"></param>
@@ -127,9 +119,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
         [Option("message", "Message ID of the target message")] string message,
         [Option("emoji", "Target Emoji")] string emoji)
     {
-        //
         // Validate Permissions
-
         if (!ctx.Member.Permissions.HasPermission(Permissions.ManageRoles))
         {
             var responseBuilder1 = new DiscordInteractionResponseBuilder();
@@ -139,9 +129,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             return;
         }
 
-        //
         // Write changes to database
-
         await using (var connection = new SqliteConnection("Data Source=database.db"))
         {
             connection.Open();
@@ -160,7 +148,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
     }
 
     /// <summary>
-    ///		Clear rero command
+    ///		Clear Reaction Role command
     /// </summary>
     /// <param name="ctx"></param>
     /// <param name="message"></param>
@@ -170,9 +158,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
         [Option("message", "Message ID of the target message")]
         string message)
     {
-        //
         // Validate Permissions
-
         if (!ctx.Member.Permissions.HasPermission(Permissions.ManageRoles))
         {
             var responseBuilder1 = new DiscordInteractionResponseBuilder();
@@ -182,9 +168,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             return;
         }
 
-        //
         // Write changes to database
-
         await using (var connection = new SqliteConnection("Data Source=database.db"))
         {
             connection.Open();

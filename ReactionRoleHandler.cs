@@ -14,17 +14,10 @@ public class ReactionRoleHandler
 {
     public static async Task ReactionEventHandler(DiscordClient client, MessageReactionAddEventArgs eventArgs)
     {
-        //
         // Filter out DMs
+        if (eventArgs.Guild == null) return;
 
-        if (eventArgs.Guild == null)
-        {
-            return;
-        }
-
-        //
         // Query database
-
         ulong roleId = 0;
 
         await using (var connection = new SqliteConnection("Data Source=database.db"))
@@ -37,31 +30,22 @@ public class ReactionRoleHandler
 
             await using (var reader = await command.ExecuteReaderAsync())
             {
-                if (reader.HasRows)
+                if (reader.HasRows) return;
+
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        if (reader.IsDBNull(0)) continue;
-                        roleId = (ulong)reader.GetInt64("role");
-                        break;
-                    }
+                    if (reader.IsDBNull(0)) continue;
+                    roleId = (ulong)reader.GetInt64("role");
+                    break;
                 }
             }
         }
 
-        //
         // Exit if nothing was found
+        if (roleId == 0) return;
 
-        if (roleId == 0)
-        {
-            return;
-        }
-
-        //
         // Grant role to user
-
         var targetRole = eventArgs.Guild.GetRole(roleId);
-
         var member = (DiscordMember)eventArgs.User;
         await member.GrantRoleAsync(targetRole);
     }
