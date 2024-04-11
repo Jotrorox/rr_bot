@@ -72,7 +72,7 @@ $ dotnet run
 ```
 
 **If you encounter Problems just hit me up, I'm happy to help you get started**\
-**You can do that over matrix: @jotrorox:matrix.org or Discord: https://discord.gg/Z7ADkZ9H** 
+**You can do that over matrix: @jotrorox:matrix.org or Discord: https://discord.gg/RVr4cceFUt** 
 
 ## :memo: License ##
 
