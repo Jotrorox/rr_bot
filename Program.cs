@@ -12,12 +12,10 @@ await using (var connection = new SqliteConnection("Data Source=database.db"))
     command.ExecuteNonQuery();
 }
 
-String token = Environment.GetEnvironmentVariable("DISCORD_TOKEN");
-
 // Setup Client
 var clientConfig = new DiscordConfiguration
 {
-    Token = token,
+    Token = Environment.GetEnvironmentVariable("DISCORD_TOKEN"),
     TokenType = TokenType.Bot,
     Intents = DiscordIntents.GuildMessageReactions |
                 DiscordIntents.AllUnprivileged

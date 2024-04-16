@@ -34,9 +34,7 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
             return;
         }
 
-        //
         // Attempt to look for target message
-
         var messages = await ctx.Channel.GetMessagesAsync();
         DiscordMessage? targetMessage = null;
 
@@ -86,7 +84,6 @@ public class ReactionRolesSlashCommands : ApplicationCommandModule
         }
 
         // Save in database if success
-
         await using (var connection = new SqliteConnection("Data Source=database.db"))
         {
             connection.Open();
