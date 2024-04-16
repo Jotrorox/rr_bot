@@ -1,4 +1,4 @@
-<h1 align="center">RR - Bot</h1>
+<h1 align="center">Rudolf - Bot</h1>
 
 <p align="center">
   <img src="https://img.shields.io/github/languages/top/jotrorox/rr_bot?style=flat-square" alt="GitHub Top Language Badge">
@@ -12,7 +12,7 @@
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  RR - Bot 🚀 Under construction...  🚧
+	🚧  Rudolf - Bot 🚀 Under construction...  🚧
 </h4> 
 
 <hr>
