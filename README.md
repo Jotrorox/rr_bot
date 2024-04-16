@@ -58,10 +58,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/Jotrorox/FiFi
+$ git clone https://github.com/Jotrorox/rudolf
 
 # Access
-$ cd FiFi
+$ cd rudolf
 
 # Install dependencies
 $ dotnet restore
@@ -88,6 +88,9 @@ $ docker pull jotrorox/rudolf
 # Start the bot
 $ docker run -e DISCORD_TOKEN=<yourDiscordToken> jotrorox/rudolf
 ```
+
+## :book: Terms of Service ##
+Neither me as the creator of this project nor any person hosting or developing this, is responsible for any harm done using this bot and the owner of the Server utilizing this bot is responsible for moderating it's usage.
 
 ## :memo: License ##
 
