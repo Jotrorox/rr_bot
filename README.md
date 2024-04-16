@@ -65,7 +65,10 @@ $ cd FiFi
 # Install dependencies
 $ dotnet restore
 
-# Add the File token.conf and put the bot token in it
+# Add the bot Token to env on Windows
+$ set DISCORD_TOKEN=<yourDiscordToken>
+# Add the bot Token to env on Linux/macOS
+$ export DISCORD_TOKEN=<yourDiscordToken>
 
 # Run the project
 $ dotnet run
