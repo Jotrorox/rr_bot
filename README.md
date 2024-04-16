@@ -94,10 +94,10 @@ Neither me as the creator of this project nor any person hosting or developing t
 
 ## :memo: License ##
 
-This project is under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+This project is under the GNU GPL v3 License. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :heart: by <a href="https://github.com/jotrorox" target="_blank">Jotrorox</a>
+Made with :heart: by <a href="https://jotrorox.com" target="_blank">Jotrorox</a>
 
 &#xa0;
 
