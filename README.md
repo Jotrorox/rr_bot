@@ -47,6 +47,7 @@ The following tools were used in this project:
 - [DotNET](https://dotnet.microsoft.com/en-us/)
 - [DSharpPlus](https://github.com/DSharpPlus/DSharpPlus)
 - [SQLite](https://www.sqlite.org/)
+- [Docker](https://docker.com)
 
 
 ## :white_check_mark: Development Requirements ##
