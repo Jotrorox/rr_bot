@@ -1,0 +1,8 @@
+.gitignore
+LICENSE
+README.md
+rr_bot.sln
+out
+obj
+.github
+bin

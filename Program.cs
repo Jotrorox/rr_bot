@@ -2,7 +2,6 @@
 using DSharpPlus.SlashCommands;
 using Microsoft.Data.Sqlite;
 using rr_bot;
-using System;
 
 await using (var connection = new SqliteConnection("Data Source=database.db"))
 {
