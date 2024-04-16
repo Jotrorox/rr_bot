@@ -24,7 +24,7 @@ jobs:
               run: docker build -t rudolf .
 
             - name: Tag Docker image
-              run: docker tag rudolf ${{ secrets.DOCKER_USERNAME }}/rudolf
+              run: docker tag rudolf ${{ secrets.DOCKER_USERNAME }}/rudolf:latest
 
             - name: Push Docker image
-              run: docker push ${{ secrets.DOCKER_USERNAME }}/rudolf
+              run: docker push ${{ secrets.DOCKER_USERNAME }}/rudolf:latest
