@@ -78,6 +78,17 @@ $ dotnet run
 **If you encounter Problems just hit me up, I'm happy to help you get started**\
 **You can do that over matrix: @jotrorox:matrix.org or Discord: https://discord.gg/RVr4cceFUt** 
 
+## :dash: Getting Started with Docker ##
+
+I will explain the Docker way here so please ensure you have Docker installed!
+```bash
+# Pull the project
+$ docker pull jotrorox/rudolf
+
+# Start the bot
+$ docker run -e DISCORD_TOKEN=<yourDiscordToken> jotrorox/rudolf
+```
+
 ## :memo: License ##
 
 This project is under the MIT License. For more details, see the [LICENSE](LICENSE) file.
